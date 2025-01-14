@@ -32,8 +32,15 @@
 .arow {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 50px;
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+    background-color: gray;
 }
-
+.arow:hover {
+    transition: all 0.2s;
+    background-color: rgb(66, 66, 66);
+}
 svg {
     color: white;
     z-index: 99;
