@@ -41,9 +41,7 @@ const myanmarMap = {
     { title: "Myanmar Extended-A", range: "U+AA60 to U+AA7F" },
     { title: "Myanmar Extended-B", range: "U+A9E0 to U+A9FF" },
   ];
-  
-  console.log(myanmarUnicodeTitles);
-  
+    
 
 
 document.getElementById('copybutton').addEventListener('click', () => {
@@ -61,9 +59,15 @@ document.getElementById("arrowBtn").addEventListener("click", () => {
     let indexOfvalue = inputString.indexOf(nomalizedCheck);
     let previousIndexOfvalue = Number(indexOfvalue) - 1;
     
-    document.getElementById("output").value = "အမျှော်ကင့်ကြီးပဲနော်";
+    let result =  Array.from(inputString).map(toCustomUnicode);
+    console.log(result);
   }
 })
+
+function toCustomUnicode(char) {
+  let unicodeValue = char.charCodeAt(0);
+  return `UT${unicodeValue.toString().padStart(3, '0')}`;
+}
 
 
 function replaceMyanmarCharacters(input) {
